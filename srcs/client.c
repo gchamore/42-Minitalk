@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:55:13 by gchamore          #+#    #+#             */
-/*   Updated: 2024/03/15 16:03:51 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/03/18 07:28:57 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_to_server(int pid, char *message)
 			message_bis++;
 			bit = 0;
 		}
+		usleep(50);
 	}
 	if (!(*message_bis))
 		ft_message_is_over(pid);

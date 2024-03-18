@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:25:30 by gchamore          #+#    #+#             */
-/*   Updated: 2024/03/15 17:04:24 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/03/18 07:28:53 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_get_signal(int signal, siginfo_t *info, void *context)
 	static unsigned char	result = 0;
 	static int				bit = 1;
 	static int				id = 0;
-	static char	*final;
+	static char				*final;
 
 	if (info->si_pid != 0)
 		id = info->si_pid;
@@ -51,17 +51,23 @@ void	ft_get_signal(int signal, siginfo_t *info, void *context)
 		bit = 1;
 		if (!final)
 		final = ft_strdup("");
-		final = char_to_str(final, result);
-		if (result == 0)
-		{
-			ft_print_final_str(final, id);
-			free(final);
-			final = NULL;
-		}
+		get_signal_2(result, id, &final);
 		result = 0;
 	}
 	if (kill(id, SIGUSR1) == -1)
 		ft_error_handler(0);
+	usleep(50);
+}
+
+void	get_signal_2(unsigned char result, int id, char **final)
+{
+	*final = char_to_str(*final, result);
+	if (result == 0)
+	{
+		ft_print_final_str(*final, id);
+		free(*final);
+		*final = NULL;
+	}
 }
 
 int ft_power(int nb, int power)
