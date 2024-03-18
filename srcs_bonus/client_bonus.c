@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:55:13 by gchamore          #+#    #+#             */
-/*   Updated: 2024/03/18 19:15:27 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:18:15 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/minitalk.h"
+#include "../headers/minitalk_bonus.h"
 
 int	main(int ac, char **av)
 {
@@ -82,6 +82,9 @@ void	ft_confirmation_handler(int signal, siginfo_t *info, void *context)
 	if (signal == SIGUSR1)
 		ft_to_server(id, NULL);
 	if (signal == SIGUSR2)
+	{
+		ft_printf("Server >> The message came through\n");
 		exit(EXIT_SUCCESS);
+	}
 	usleep(50);
 }
