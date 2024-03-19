@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:55:13 by gchamore          #+#    #+#             */
-/*   Updated: 2024/03/18 19:18:15 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/03/19 10:32:02 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	main(int ac, char **av)
 		ft_error_handler(1);
 	if (ac != 3)
 	{
-		ft_printf("Utilisez le format: ./client <PID> <String>\n");
+		ft_printf("⚠️  \033[1;31m");
+		ft_printf("Utilisez le format: ./client <PID> <String>\033[0m\n");
 		exit(EXIT_FAILURE);
 	}
 	ft_to_server(ft_atoi(av[1]), av[2]);
@@ -83,7 +84,9 @@ void	ft_confirmation_handler(int signal, siginfo_t *info, void *context)
 		ft_to_server(id, NULL);
 	if (signal == SIGUSR2)
 	{
-		ft_printf("Server >> The message came through\n");
+		ft_printf("🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟\n\n");
+		ft_printf("🌟 \033[1;32mYouhouuu ! The message came through !🌟\n\n");
+		ft_printf("🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟\033[0m\n");
 		exit(EXIT_SUCCESS);
 	}
 	usleep(50);

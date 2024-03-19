@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:29:00 by gchamore          #+#    #+#             */
-/*   Updated: 2024/03/18 17:41:31 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/03/19 10:52:21 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <signal.h>
 # include "libft.h"
 
@@ -32,9 +31,9 @@ void	ft_confirmation_handler(int signal, siginfo_t *info, void *context);
 //////////////////////////
 
 void	ft_get_signal(int signal, siginfo_t *info, void *context);
+void	get_signal_2(unsigned char result, int id, char **final);
 void	ft_print_final_str(char *final, int id);
 char	*char_to_str(char const *s1, char const letter);
-void	get_signal_2(unsigned char result, int id, char **final);
 
 //////////////////////////
 //         TOOLS        //

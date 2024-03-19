@@ -3,6 +3,7 @@
 		"signal.h": "c",
 		"minitalk.h": "c",
 		"stdio.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"minitalk_bonus.h": "c"
 	}
 }
