@@ -83,6 +83,7 @@ Ce projet met l’accent sur la **gestion des processus**, la **synchronisation*
    ```bash
    ./server
 Le serveur affichera son PID.  
+
 4. **Lancer le client et envoyer un message** :
    ```bash
    ./client <PID_DU_SERVEUR> "Hello, world!"
